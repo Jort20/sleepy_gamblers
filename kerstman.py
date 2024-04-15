@@ -8,7 +8,12 @@ import pickle
 import numpy as np
 
 
-class kerstboom:
+class Kerstboom:
+    """
+    Deze klasse bevat voor de Kerstboom classifier een predict functie.
+    Deze klasse wordt dus gebruikt voor het voorspellen van de prognose10jaar
+    van een dataset over een bepaalde hartziekte.
+    """
     def __init__(self, true_or_false=False):
         """
         Deze functie dient als opvulling voor de class.
@@ -18,7 +23,7 @@ class kerstboom:
         """
         self.true_or_false = true_or_false
 
-    def predict(self,  filename='competition_test.csv'):
+    def predict(self,  filename='data/competition_test.csv'):
         """
         Deze functie ontvangt een test dataset voor de prognose10jaar
         van een hartziekte, en doet met een eerder geselecteerd machine learning
@@ -27,7 +32,8 @@ class kerstboom:
         formaat voor het machine learning model. Ook wordt er een PCA uitgevoerd
         op de gegeven test data.
         :param filename: Dit is de path naar het bestand met erin de test data,
-        waarop een voorspelling moet worden gedaan.
+        waarop een voorspelling moet worden gedaan. Wanneer er geen filename wordt
+        meegegeven, wordt de competition_test.csv file gebruikt.
         :output prediction: Er wordt een lijst gevormd met erin de voorspellingen
         van het machine learning model. 
         """
@@ -91,8 +97,8 @@ class kerstboom:
             else:
                 prediction += ['CHD+']
         return prediction
- 
+
 if __name__ in '__main__':
-    model = kerstboom(true_or_false=False)
+    model = Kerstboom(true_or_false=False)
     print(model.predict())
    
