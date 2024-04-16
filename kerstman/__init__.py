@@ -12,7 +12,7 @@ Er is ook getest met de SMOTE functie van sklearn, helaas gaf deze geen hogere t
 gebruik gemaakt van de SMOTE functie voor het vormen van het beste machine learning model.
 """
 
-from kerstman import Kerstboom
+from .kerstman import Kerstboom
 
 def model_factory():
     return Kerstboom(true_or_false=True)

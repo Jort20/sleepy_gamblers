@@ -37,7 +37,8 @@ class Kerstboom:
         :output prediction: Er wordt een lijst gevormd met erin de voorspellingen
         van het machine learning model. 
         """
-        data = pd.read_csv(filename)
+        datafile = pkg_resources.resource_filename(__name__, filename)
+        data = pd.read_csv(datafile)
         data['prognose10jaar'] = data['prognose10jaar'].astype('category')
         # Preprocessing moet hierna komen
         columns_to_replace = ['hypertensie', 'hartinfarct', 'diabetes', 'nierziekte']
